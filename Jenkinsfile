@@ -3,7 +3,7 @@ pipeline {
 
     tools {
         // Install the Maven version configured in Jenkins
-        maven 'Maven 3.6.3'
+        maven 'Maven 3.9.8'
     }
 
     environment {
@@ -18,7 +18,7 @@ pipeline {
                 // Clean workspace before cloning
                 cleanWs()
                 // Clone repository
-                git url: 'https://your-repo-url.git', branch: 'main'
+                git url: 'https://github.com/pallavijk05/Maven-Web-pallavi.git', branch: 'main'
             }
         }
         stage('Build') {
@@ -43,7 +43,7 @@ pipeline {
                     // Deploy step (this can be customized based on your deployment process)
                     echo 'Deploying...'
                     // Example: copy the war file to the deployment directory
-                    sh 'cp target/your-app.war /path/to/deploy/directory'
+                    sh 'cp target/01-Maven-WebApp-StarAgile.war'
                 }
             }
         }
